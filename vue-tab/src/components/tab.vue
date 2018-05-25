@@ -2,6 +2,7 @@
   <div class="tabs">
     <div class="tabs-bar">
       <div :class="tabCls(item)" v-for="(item,index) in navList" @click="handleChange(index)">
+        <span class="closeShow" v-if="item.closable">X</span>
         {{item.label}}
       </div>
     </div>
@@ -44,7 +45,8 @@
           _this.navList.push({
 //            label,name是pane组件上的属性
             label: pane.label,
-            name: pane.name || index
+            name: pane.name || index,
+            closable: pane.closable
           });
 //          if (!pane.name) pane.name = index;
           if (index === 0) {
@@ -81,5 +83,12 @@
   }
 </script>
 <style lang='scss' rel="stylesheet/scss">
-
+  .closeShow {
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 0px;
+    right: 2px;
+  }
 </style>

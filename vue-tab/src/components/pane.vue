@@ -12,6 +12,10 @@
       label: {
         type: String,
         default: ''
+      },
+      closable: {
+        type: Boolean,
+        default: true
       }
     },
     data(){
@@ -30,7 +34,7 @@
 //      }
     },
     mounted(){
-        this.updateNav();
+      this.updateNav();
     }
   }
 </script>

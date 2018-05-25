@@ -1,7 +1,7 @@
 <template>
   <div>
     <tabs v-model="activeKey">
-      <pane label="标签一" name="1">
+      <pane label="标签一" name="1" :closable="false">
         <input type="text" placeholder="输入点什么...">
         <p>标签一的内容1</p>
         <p>标签一的内容2</p>
